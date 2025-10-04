@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                     <p className="text-sm text-muted-foreground">
-                        &copy; {new Date().getFullYear()} Your Company, Inc. All Rights Reserved.
+                        &copy; {new Date().getFullYear()} Horsepower Development. All Rights Reserved.
                     </p>
                     <div className="flex justify-center space-x-6 mt-4 md:mt-0">
                         <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
