@@ -1,26 +1,33 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
-export default function Navbar({ currentPage, setCurrentPage }) {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const navLinks = ['Home', 'Contact'];
+    const location = useLocation();
 
-    const NavLink = ({ page }) => (
-        <button
-            onClick={() => {
-                setCurrentPage(page);
-                setIsOpen(false);
-            }}
-            className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                currentPage === page
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-primary'
-            }`}
-        >
-            {page}
-        </button>
-    );
+    const navLinks = [
+        { path: '/', label: 'Home' },
+        { path: '/pricing', label: 'Pricing' },
+    ];
+
+    const NavLink = ({ to, children }) => {
+        const isActive = location.pathname === to;
+        return (
+            <Link
+                to={to}
+                onClick={() => setIsOpen(false)}
+                className={`block md:inline-block px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                        ? 'text-primary'
+                        : 'text-muted-foreground hover:text-primary'
+                }`}
+            >
+                {children}
+            </Link>
+        );
+    };
 
     return (
         <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
@@ -28,14 +35,18 @@ export default function Navbar({ currentPage, setCurrentPage }) {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <button onClick={() => setCurrentPage('Home')} className="flex items-center">
+                        <Link to="/" className="flex items-center">
                             <img src="/horizontal Logopng.svg" alt="Horsepower Development" className="h-10" />
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-4">
-                        {navLinks.map(page => <NavLink key={page} page={page} />)}
+                        {navLinks.map(link => (
+                            <NavLink key={link.path} to={link.path}>
+                                {link.label}
+                            </NavLink>
+                        ))}
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -57,7 +68,11 @@ export default function Navbar({ currentPage, setCurrentPage }) {
                         className="md:hidden border-t border-border"
                     >
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {navLinks.map(page => <NavLink key={page} page={page} />)}
+                             {navLinks.map(link => (
+                                <NavLink key={link.path} to={link.path}>
+                                    {link.label}
+                                </NavLink>
+                            ))}
                         </div>
                     </motion.div>
                 )}
