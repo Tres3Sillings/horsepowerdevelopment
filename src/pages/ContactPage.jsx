@@ -1,97 +1,116 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, AlertTriangle, Loader } from 'lucide-react';
-
-// IMPORTANT: Replace with your actual Access Key from web3forms.com
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import ScrollFadeIn from '../components/ScrollFadeIn';
 
 export default function ContactPage() {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submissionStatus, setSubmissionStatus] = useState(null); // 'success', 'error', or null
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setIsSubmitting(true);
-        setSubmissionStatus(null);
-
-        const formData = new FormData(event.target);
-        formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                setSubmissionStatus('success');
-                event.target.reset();
-            } else {
-                console.error("Error from Web3Forms:", data);
-                setSubmissionStatus('error');
-            }
-        } catch (error) {
-            console.error("Submission Error:", error);
-            setSubmissionStatus('error');
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="container mx-auto px-4 sm:px-6 lg:px-8 py-16"
+            className="bg-background text-foreground"
         >
-            <div className="max-w-xl mx-auto">
-                <h1 className="text-4xl font-bold font-sans text-primary mb-2 text-center">Contact Us</h1>
-                <p className="text-muted-foreground text-center mb-8">We'd love to hear from you. Drop us a line below.</p>
-
-                <div className="bg-card p-8 rounded-lg border border-border shadow-lg">
-                    {submissionStatus === 'success' ? (
-                        <div className="text-center py-10">
-                            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                            <h2 className="text-2xl font-bold text-primary mb-2">Message Sent!</h2>
-                            <p className="text-muted-foreground">Thank you for reaching out. We'll get back to you shortly.</p>
-                        </div>
-                    ) : (
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-muted-foreground">Full Name</label>
-                                <input type="text" id="name" name="name" required className="mt-1 block w-full bg-input border border-border rounded-md p-3 text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-muted-foreground">Email</label>
-                                <input type="email" id="email" name="email" required className="mt-1 block w-full bg-input border border-border rounded-md p-3 text-foreground focus:ring-2 focus:ring-ring focus:outline-none" />
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-muted-foreground">Message</label>
-                                <textarea id="message" name="message" rows="4" required className="mt-1 block w-full bg-input border border-border rounded-md p-3 text-foreground focus:ring-2 focus:ring-ring focus:outline-none"></textarea>
-                            </div>
-                            <div>
-                                <button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    className="w-full flex items-center justify-center bg-primary text-primary-foreground hover:bg-accent font-bold rounded-md px-8 py-3 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
-                                >
-                                    {isSubmitting ? <Loader className="animate-spin h-5 w-5 mr-3" /> : null}
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                                </button>
-                            </div>
-                            {submissionStatus === 'error' && (
-                                <div className="flex items-center text-sm text-destructive mt-4">
-                                    <AlertTriangle className="h-4 w-4 mr-2" />
-                                    <p>Something went wrong. Please try again later.</p>
-                                </div>
-                            )}
-                        </form>
-                    )}
+            {/* 1. Hero Section */}
+            <section className="relative bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <ScrollFadeIn immediate>
+                        <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-primary">
+                            Get in Touch
+                        </h1>
+                        <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl font-serif text-muted-foreground">
+                            Ready to start your journey or have a question for us? Fill out the form below or use the contact information to reach out.
+                        </p>
+                    </ScrollFadeIn>
                 </div>
-            </div>
+            </section>
+
+            {/* 2. Contact Form & Info Section */}
+            <section className="bg-background py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-16 items-start">
+                        {/* Contact Form */}
+                        <ScrollFadeIn>
+                            <div className="bg-card p-8 rounded-lg shadow-lg border border-border">
+                                <h2 className="text-2xl font-bold font-sans text-primary mb-6">Book a Call or Send a Message</h2>
+                                <form>
+                                    <div className="space-y-6">
+                                        <div>
+                                            <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">Name</label>
+                                            <input type="text" id="name" name="name" className="block w-full px-4 py-3 bg-muted border border-border rounded-md focus:ring-primary focus:border-primary" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">Email</label>
+                                            <input type="email" id="email" name="email" className="block w-full px-4 py-3 bg-muted border border-border rounded-md focus:ring-primary focus:border-primary" />
+                                        </div>
+                                        <div>
+                                            <label htmlFor="goal" className="block text-sm font-medium text-muted-foreground mb-2">Primary Goal</label>
+                                            <select id="goal" name="goal" className="block w-full px-4 py-3 bg-muted border border-border rounded-md focus:ring-primary focus:border-primary">
+                                                <option>Select a goal...</option>
+                                                <option>MX & MTB Training</option>
+                                                <option>Strength & Conditioning</option>
+                                                <option>Online Coaching</option>
+                                                <option>General Inquiry</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">Message</label>
+                                            <textarea id="message" name="message" rows="4" className="block w-full px-4 py-3 bg-muted border border-border rounded-md focus:ring-primary focus:border-primary"></textarea>
+                                        </div>
+                                        <div>
+                                            <button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                                Book a Call
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </ScrollFadeIn>
+
+                        {/* Contact Info */}
+                        <ScrollFadeIn>
+                            <div className="space-y-8">
+                                <h2 className="text-2xl font-bold font-sans text-primary">Contact Information</h2>
+                                <div className="space-y-4 font-serif">
+                                    <div className="flex items-center gap-4">
+                                        <Phone className="w-6 h-6 text-primary" />
+                                        <a href="tel:612-900-7447" className="text-lg text-muted-foreground hover:text-primary">(612) 900-7447</a>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <Mail className="w-6 h-6 text-primary" />
+                                        <a href="mailto:info@horsepowerdevelopment.com" className="text-lg text-muted-foreground hover:text-primary">info@horsepowerdevelopment.com</a>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <MapPin className="w-6 h-6 text-primary" />
+                                        <p className="text-lg text-muted-foreground">Apple Valley, MN</p>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <Instagram className="w-6 h-6 text-primary" />
+                                        <a href="https://www.instagram.com/horsepowerdevelopment/" target="_blank" rel="noopener noreferrer" className="text-lg text-muted-foreground hover:text-primary">@horsepowerdevelopment</a>
+                                    </div>
+                                </div>
+                                <div className="mt-8">
+                                    <h3 className="text-xl font-bold font-sans text-primary mb-4">Business Hours</h3>
+                                    <p className="text-lg font-serif text-muted-foreground">Monday - Friday: 9am - 6pm</p>
+                                    <p className="text-lg font-serif text-muted-foreground">Saturday: 10am - 4pm</p>
+                                    <p className="text-lg font-serif text-muted-foreground">Sunday: Closed</p>
+                                </div>
+                            </div>
+                        </ScrollFadeIn>
+                    </div>
+                </div>
+            </section>
+
+            {/* 3. Instagram Feed Section */}
+            <section className="bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <ScrollFadeIn className="text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Follow Our Journey</h2>
+                        <div className="mt-8 bg-card border border-border rounded-lg p-8 h-96 flex items-center justify-center">
+                            <p className="text-muted-foreground font-serif text-lg">Instagram Feed Embed Coming Soon</p>
+                        </div>
+                    </ScrollFadeIn>
+                </div>
+            </section>
         </motion.div>
     );
 }

@@ -25,14 +25,13 @@ export default function HomePage() {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
             className="bg-background text-foreground"
         >
             {/* 1. Hero Section */}
             <section className="relative bg-background py-16 md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <ScrollFadeIn className="text-center md:text-left">
+                        <ScrollFadeIn immediate className="text-center md:text-left">
                             <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
                                 Build Real Power. <span className="text-primary">Ride Longer.</span> Recover Faster.
                             </h1>
@@ -48,7 +47,7 @@ export default function HomePage() {
                                 </Link>
                             </div>
                         </ScrollFadeIn>
-                        <ScrollFadeIn className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-96">
+                        <ScrollFadeIn immediate className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-96">
                             <img src="/mtb-training-rock-trail.JPG" alt="Mountain biker on a rock trail" className="col-span-2 row-span-2 object-cover w-full h-full rounded-lg shadow-lg" />
                         </ScrollFadeIn>
                     </div>
@@ -85,9 +84,9 @@ export default function HomePage() {
             <section className="bg-background py-16 md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <ScrollFadeIn>
+
                             <img src="/coach-james-povolny-portrait.JPG" alt="Coach James Povolny" className="object-cover w-full h-full rounded-lg shadow-lg" />
-                        </ScrollFadeIn>
+
                         <ScrollFadeIn className="text-center md:text-left">
                             <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Meet Your Coach — James Povolny</h2>
                             <p className="mt-4 text-lg font-serif text-muted-foreground">
