@@ -1,89 +1,143 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bike, Dumbbell, ClipboardList } from 'lucide-react';
+import { Bike, Dumbbell, ClipboardList, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ScrollFadeIn from '../components/ScrollFadeIn';
+import AnimatedFeatureCard from '../components/AnimatedFeatureCard';
 
 export default function HomePage() {
     const features = [
-        { icon: <Bike className="w-8 h-8" />, title: "MX & MTB Training", description: "Specialized training programs for motocross and mountain bike athletes." },
-        { icon: <Dumbbell className="w-8 h-8" />, title: "Strength & Conditioning", description: "Certified Strength and Conditioning Specialist to help you reach your peak performance." },
-        { icon: <ClipboardList className="w-8 h-8" />, title: "Personalized Coaching", description: "One-on-one coaching to help you achieve your fitness goals." },
+        { icon: <Bike className="w-8 h-8" />, title: "MX & MTB Training", description: "Sport-specific strength, conditioning, and endurance to dominate the track or trail." },
+        { icon: <Dumbbell className="w-8 h-8" />, title: "Strength & Conditioning", description: "Full-body performance training tailored to your goals." },
+        { icon: <ClipboardList className="w-8 h-8" />, title: "Online Coaching", description: "Remote programs and personalized guidance, wherever you ride." },
     ];
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.4, // Time delay between each child animation
+            },
+        },
+    };
 
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-background text-foreground space-y-24 md:space-y-32 mb-24"
+            className="bg-background text-foreground"
         >
             {/* 1. Hero Section */}
-            <section className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="text-center md:text-left">
-                        <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
-                            Unlock Your <span className="text-primary">Peak</span> Performance
-                        </h1>
-                        <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl font-serif text-muted-foreground">
-                            Horsepower Development is a personal training company for motocross and mountain bike athletes. We are dedicated to helping you achieve your fitness goals and reach your peak performance.
-                        </p>
-                        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                            <Link to="/get-started" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
-                                Get Started
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-96">
-                        <img src="/The Action Shot.png" alt="Action Shot" className="col-span-2 row-span-1 object-cover w-full h-full rounded-lg shadow-lg" />
-                        <img src="/The Athlete Focus.png" alt="Athlete Focus" className="col-span-1 row-span-1 object-cover w-full h-full rounded-lg shadow-lg" />
-                        <img src="/The Graphic Look.png" alt="Graphic Look" className="col-span-1 row-span-1 object-cover w-full h-full rounded-lg shadow-lg" />
-                    </div>
-                </div>
-            </section>
-
-            {/* 2. Social Proof Section */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8">
-                    <div className="flex justify-center items-center gap-4">
-                        <p className="font-mono text-muted-foreground text-xl md:text-2xl">Owned by @jamespvlny</p>
-                    </div>
-                    <div className="flex justify-center items-center gap-4">
-                        <p className="font-mono text-muted-foreground text-xl md:text-2xl">Fueled by @hammernutrition</p>
+            <section className="relative bg-background py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <ScrollFadeIn className="text-center md:text-left">
+                            <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
+                                Build Real Power. <span className="text-primary">Ride Longer.</span> Recover Faster.
+                            </h1>
+                            <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl font-serif text-muted-foreground">
+                                MX & MTB-specific training built by a Certified Strength and Conditioning Specialist.
+                            </p>
+                            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                    Start Training
+                                </Link>
+                                <Link to="/#services" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                    See Programs
+                                </Link>
+                            </div>
+                        </ScrollFadeIn>
+                        <ScrollFadeIn className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-96">
+                            <img src="/mtb-training-rock-trail.JPG" alt="Mountain biker on a rock trail" className="col-span-2 row-span-2 object-cover w-full h-full rounded-lg shadow-lg" />
+                        </ScrollFadeIn>
                     </div>
                 </div>
             </section>
 
-            {/* 3. Features Section */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Train With The Best</h2>
-                    <p className="mt-4 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
-                </div>
-                <div className="mt-12 grid md:grid-cols-3 gap-8">
-                    {features.map((feature, i) => (
-                        <div key={i} className="bg-card p-6 rounded-lg border border-border text-center transition-all duration-300 hover:border-primary hover:shadow-xl hover:-translate-y-2">
-                            <div className="inline-block p-4 bg-secondary text-secondary-foreground rounded-full mb-4">{feature.icon}</div>
-                            <h3 className="text-xl font-bold font-sans text-card-foreground">{feature.title}</h3>
-                            <p className="mt-2 font-serif text-muted-foreground">{feature.description}</p>
-                        </div>
-                    ))}
+            {/* 2. Services Section */}
+            <section id="services" className="bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <ScrollFadeIn className="text-center max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Train With The Best</h2>
+                        <p className="mt-4 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
+                    </ScrollFadeIn>
+                    <motion.div
+                        className="mt-12 grid md:grid-cols-3 gap-8"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {features.map((feature, i) => (
+                            <AnimatedFeatureCard key={i} feature={feature} />
+                        ))}
+                    </motion.div>
+                     <div className="mt-8 text-center">
+                        <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                            Book a Consultation
+                        </Link>
+                    </div>
                 </div>
             </section>
 
-            {/* 4. Final CTA Section */}
-            <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative text-center bg-card p-10 rounded-lg border border-border">
-                    <div className="relative">
-                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Ready to Get Started?</h2>
-                        <p className="mt-4 max-w-2xl mx-auto text-lg font-serif text-muted-foreground">
-                            Take the next step and see how our solutions can help you achieve your goals.
-                        </p>
-                        <div className="mt-8">
-                            <Link to="/get-started" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                                Start Your Project Today
-                            </Link>
-                        </div>
+            {/* 3. About Section */}
+            <section className="bg-background py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <ScrollFadeIn>
+                            <img src="/coach-james-povolny-portrait.JPG" alt="Coach James Povolny" className="object-cover w-full h-full rounded-lg shadow-lg" />
+                        </ScrollFadeIn>
+                        <ScrollFadeIn className="text-center md:text-left">
+                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Meet Your Coach — James Povolny</h2>
+                            <p className="mt-4 text-lg font-serif text-muted-foreground">
+                                Certified Strength and Conditioning Specialist (CSCS) with years of experience with motocross and mountain bike athletes. Focus on functional strength, endurance, and injury prevention.
+                            </p>
+                            <p className="mt-4 text-lg font-serif font-bold text-foreground">
+                                “You don’t ride better by chance — you ride better by training with purpose.”
+                            </p>
+                            <div className="mt-6 flex justify-center md:justify-start items-center gap-2">
+                                <Instagram className="w-6 h-6 text-muted-foreground" />
+                                <a href="https://www.instagram.com/horsepowerdevelopment/" target="_blank" rel="noopener noreferrer" className="text-lg font-serif text-muted-foreground hover:text-primary transition-colors">
+                                    @horsepowerdevelopment
+                                </a>
+                            </div>
+                        </ScrollFadeIn>
                     </div>
+                </div>
+            </section>
+
+
+            {/* 4. Results / Testimonials Section */}
+            <section className="bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                     <ScrollFadeIn className="text-center max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Athletes Who Built Their Horsepower</h2>
+                     </ScrollFadeIn>
+                     <div className="mt-12 grid md:grid-cols-3 gap-4">
+                        <img src="/motocross-cornering-sand-track.JPG" alt="Motocross rider cornering" className="object-cover w-full h-full rounded-lg shadow-lg" />
+                        <img src="/mtb-race-finish-line.JPG" alt="Mountain bike race finish line" className="object-cover w-full h-full rounded-lg shadow-lg" />
+                        <img src="/motocross-jump-orange-bike.jpg" alt="Motocross jump" className="object-cover w-full h-full rounded-lg shadow-lg" />
+                     </div>
+                </div>
+            </section>
+
+            {/* 5. Contact Section */}
+            <section className="bg-background py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <ScrollFadeIn className="relative text-center bg-card p-10 rounded-lg border border-border">
+                        <div className="relative">
+                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Ready to Get Started?</h2>
+                            <p className="mt-4 max-w-2xl mx-auto text-lg font-serif text-muted-foreground">
+                                Take the next step and see how our solutions can help you achieve your goals.
+                            </p>
+                            <div className="mt-8">
+                                <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                    Book a Session
+                                </Link>
+                            </div>
+                        </div>
+                    </ScrollFadeIn>
                 </div>
             </section>
         </motion.div>

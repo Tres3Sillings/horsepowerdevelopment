@@ -9,14 +9,25 @@ export default function Footer() {
                     <p className="text-sm text-muted-foreground">
                         &copy; {new Date().getFullYear()} Horsepower Development. All Rights Reserved.
                     </p>
-                    <div className="flex justify-center space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+
+                    {/* Social icons section - currently hidden */}
+                    <div className="hidden flex justify-center space-x-6 mt-4 md:mt-0">
+                        <a
+                            href="#"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a
+                            href="#"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                             <Github size={20} />
                         </a>
-                        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                        <a
+                            href="#"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                             <Linkedin size={20} />
                         </a>
                     </div>

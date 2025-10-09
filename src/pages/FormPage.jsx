@@ -55,7 +55,7 @@ export default function FormPage() {
         setFormStatus({ loading: true, error: '' });
 
         try {
-            const formspreeEndpoint = 'https://formspree.io/f/myzdkkew';
+            const formspreeEndpoint = 'https://formspree.io/f/mnnzkpqg';
 
             const response = await fetch(formspreeEndpoint, {
                 method: 'POST',
