@@ -7,9 +7,9 @@ import AnimatedFeatureCard from '../components/AnimatedFeatureCard';
 
 export default function HomePage() {
     const features = [
-        { icon: <Bike className="w-8 h-8" />, title: "MX & MTB Training", description: "Sport-specific strength, conditioning, and endurance to dominate the track or trail." },
-        { icon: <Dumbbell className="w-8 h-8" />, title: "Strength & Conditioning", description: "Full-body performance training tailored to your goals." },
-        { icon: <ClipboardList className="w-8 h-8" />, title: "Online Coaching", description: "Remote programs and personalized guidance, wherever you ride." },
+        { icon: <Bike className="w-8 h-8" />, title: "Training for Sports", description: "Sport-specific strength, conditioning, and endurance to help you reach the highest level of competition." },
+        { icon: <Dumbbell className="w-8 h-8" />, title: "General strength and conditioning", description: "Holistic performance training tailored to your goals." },
+        { icon: <ClipboardList className="w-8 h-8" />, title: "Online Coaching", description: "Remote programs and personalized guidance, meeting you right where you’re at." },
     ];
 
     const containerVariants = {
@@ -33,10 +33,10 @@ export default function HomePage() {
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <ScrollFadeIn immediate className="text-center md:text-left">
                             <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
-                                Build Real Power. <span className="text-primary">Ride Longer.</span> Recover Faster.
+                                Unlock <span className="text-primary">Peak Performance</span>
                             </h1>
                             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl font-serif text-muted-foreground">
-                                MX & MTB-specific training built by a Certified Strength and Conditioning Specialist.
+                                Personalized training plans to teach you all the secrets of pro athletes and leave nothing on the table.
                             </p>
                             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
@@ -54,11 +54,35 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* 2. Services Section */}
-            <section id="services" className="bg-muted py-16 md:py-24">
+            {/* 2. About Section */}
+            <section className="bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-12 items-center">
+
+                            <img src="/coach-james-povolny-portrait.JPG" alt="Coach James Povolny" className="object-cover w-full h-full rounded-lg shadow-lg" />
+
+                        <ScrollFadeIn className="text-center md:text-left">
+                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-secondary">About Me — <span className="text-primary">James Povolny</span></h2>
+                            <p className="mt-4 text-lg font-serif text-muted-foreground">
+                                I started Horsepower Development to give people the guidance I wish I had when I was a kid, wondering how to reach my goals of becoming a professional motocross racer. I’ve been racing dirt bikes since I was 8 years old, but when I graduated high school, I was far from where I needed to be to make my dreams come true. Desperate to know exactly what I was missing, I decided to put my racing boots aside to study exercise science at Liberty University. My studies answered every question I’ve ever had as an athlete, AND MORE. Along with my degree at Liberty, I was certified as a strength and conditioning specialist and raced on the cycling team at the collegiate level. This experience took my knowledge for training myself and others to levels I never imagined. After graduating, I’ve committed to chasing my dreams of becoming a professional athlete as well as helping others reach their fitness goals.
+                            </p>
+                            <div className="mt-6 flex justify-center md:justify-start items-center gap-2">
+                                <Instagram className="w-6 h-6 text-muted-foreground" />
+                                <a href="https://www.instagram.com/horsepowerdevelopment/" target="_blank" rel="noopener noreferrer" className="text-lg font-serif text-muted-foreground hover:text-primary transition-colors">
+                                    @horsepowerdevelopment
+                                </a>
+                            </div>
+                        </ScrollFadeIn>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* 3. Services Section */}
+            <section id="services" className="bg-background py-16 md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <ScrollFadeIn className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Train With The Best</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Programs</h2>
                         <p className="mt-4 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
                     </ScrollFadeIn>
                     <motion.div
@@ -79,33 +103,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* 3. About Section */}
-            <section className="bg-background py-16 md:py-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-
-                            <img src="/coach-james-povolny-portrait.JPG" alt="Coach James Povolny" className="object-cover w-full h-full rounded-lg shadow-lg" />
-
-                        <ScrollFadeIn className="text-center md:text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Meet Your Coach — James Povolny</h2>
-                            <p className="mt-4 text-lg font-serif text-muted-foreground">
-                                Certified Strength and Conditioning Specialist (CSCS) with years of experience with motocross and mountain bike athletes. Focus on functional strength, endurance, and injury prevention.
-                            </p>
-                            <p className="mt-4 text-lg font-serif font-bold text-foreground">
-                                “You don’t ride better by chance — you ride better by training with purpose.”
-                            </p>
-                            <div className="mt-6 flex justify-center md:justify-start items-center gap-2">
-                                <Instagram className="w-6 h-6 text-muted-foreground" />
-                                <a href="https://www.instagram.com/horsepowerdevelopment/" target="_blank" rel="noopener noreferrer" className="text-lg font-serif text-muted-foreground hover:text-primary transition-colors">
-                                    @horsepowerdevelopment
-                                </a>
-                            </div>
-                        </ScrollFadeIn>
-                    </div>
-                </div>
-            </section>
-
 
             {/* 4. Results / Testimonials Section */}
             <section className="bg-muted py-16 md:py-24">

@@ -35,8 +35,8 @@ export default function ResultsPage() {
             <section className="relative bg-muted py-16 md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <ScrollFadeIn immediate>
-                        <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-primary">
-                            Athletes Who Built Their Horsepower
+                        <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
+                            Athletes Who <span className="text-primary">Built Their Horsepower</span>
                         </h1>
                         <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl font-serif text-muted-foreground">
                             Real results from riders just like you. We are proud to be a part of their journey to peak performance.
@@ -55,7 +55,7 @@ export default function ResultsPage() {
                                     <div className="grid md:grid-cols-3 gap-8 items-center">
                                         <div className="md:col-span-1">
                                             <blockquote className="text-xl font-serif italic text-foreground">
-                                                <p>"{testimonial.quote}"</p>
+                                                <p>\"{testimonial.quote}\"</p>
                                                 <footer className="mt-4 text-base font-sans text-primary not-italic">{testimonial.name}</footer>
                                             </blockquote>
                                         </div>

@@ -6,8 +6,8 @@ import ScrollFadeIn from '../components/ScrollFadeIn';
 export default function ProgramsPage() {
     const programs = [
         {
-            title: "MX & MTB Training",
-            description: "In-person, group, or private training sessions designed to improve your performance on the track or trail. We focus on building sport-specific strength, endurance, and skills.",
+            title: "Training for Sports",
+            description: "Sport-specific strength, conditioning, and endurance to help you reach the highest level of competition.",
             details: [
                 "Personalized assessment and goal setting",
                 "On-bike and off-bike training drills",
@@ -16,8 +16,8 @@ export default function ProgramsPage() {
             ]
         },
         {
-            title: "Strength & Conditioning",
-            description: "A comprehensive strength and conditioning program tailored to your individual needs as a rider. Get stronger, prevent injuries, and boost your overall athletic performance.",
+            title: "General strength and conditioning",
+            description: "Holistic performance training tailored to your goals.",
             details: [
                 "Full-body functional strength workouts",
                 "Customized cardio and endurance plans",
@@ -27,7 +27,7 @@ export default function ProgramsPage() {
         },
         {
             title: "Online Coaching",
-            description: "Get expert coaching and a personalized training plan from anywhere in the world. Our remote coaching program is perfect for self-motivated athletes who need guidance and accountability.",
+            description: "Remote programs and personalized guidance, meeting you right where you’re at.",
             details: [
                 "Customized weekly training schedule",
                 "Video analysis and feedback",

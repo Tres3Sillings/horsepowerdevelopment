@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -10,9 +10,9 @@ export default function Navbar() {
     const navLinks = [
         { path: '/', label: 'Home' },
         { path: '/programs', label: 'Programs' },
-        { path: '/results', label: 'Results' },
-        { path: '/blog', label: 'Blog' },
-        { path: '/pricing', label: 'Pricing' },
+        //{ path: '/results', label: 'Results' },
+       // { path: '/blog', label: 'Blog' },
+        //{ path: '/pricing', label: 'Pricing' },
     ];
 
     const NavLink = ({ to, children }) => {
@@ -64,7 +64,7 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
+                    <Motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
@@ -77,7 +77,7 @@ export default function Navbar() {
                                 </NavLink>
                             ))}
                         </div>
-                    </motion.div>
+                    </Motion.div>
                 )}
             </AnimatePresence>
         </header>

@@ -9,6 +9,7 @@ import ResultsPage from './pages/ResultsPage';
 import BlogPage from './pages/BlogPage';
 import PricingPage from './pages/PricePage';
 import ContactPage from './pages/ContactPage';
+import FormPage from "./pages/FormPage.jsx";
 
 // UI
 import Navbar from './components/Navbar';
@@ -41,7 +42,7 @@ function AppRoutes() {
                     <Route path="/results" element={<ResultsPage />} />
                     <Route path="/blog" element={<BlogPage />} />
                     <Route path="/pricing" element={<PricingPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/contact" element={<FormPage />} />
                 </Route>
             </Routes>
         </AnimatePresence>
