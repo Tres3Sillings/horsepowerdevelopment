@@ -18,7 +18,7 @@ const Calendly = () => {
     return (
         <div
             className="calendly-inline-widget h-full w-full"
-            data-url="https://calendly.com/tres3sillings/15min?hide_event_type_details=1"
+            data-url="https://calendly.com/povolnyj320/30min"
             style={{ minWidth: '320px', height: '700px' }}
         />
     );
@@ -34,7 +34,9 @@ export default function FormPage() {
     const [formData, setFormData] = useState({
         age: '',
         discipline: '',
+        otherDiscipline: '',
         experience: '',
+        weightTrainingExperience: '',
         goals: '',
         selectedPackage: 'N/A',
     });
@@ -144,6 +146,17 @@ export default function FormPage() {
                                         <option value="Mountain Bike (XC)">Mountain Bike (XC)</option>
                                         <option value="Other">Other</option>
                                     </select>
+                                    {formData.discipline === 'Other' && (
+                                        <input
+                                            type="text"
+                                            name="otherDiscipline"
+                                            value={formData.otherDiscipline}
+                                            onChange={handleChange}
+                                            placeholder="Please specify your discipline"
+                                            className="mt-2 py-3 px-4 block w-full shadow-sm rounded-md bg-input border-border focus:ring-primary focus:border-primary"
+                                            required
+                                        />
+                                    )}
                                 </div>
 
                                 {/* Years of Experience */}
@@ -165,9 +178,28 @@ export default function FormPage() {
                                     </select>
                                 </div>
 
+                                {/* Years of Weight Training Experience */}
+                                <div>
+                                    <label htmlFor="weightTrainingExperience" className="block text-sm font-medium text-foreground mb-2">How many years of weight training experience do you have?</label>
+                                    <select
+                                        id="weightTrainingExperience"
+                                        name="weightTrainingExperience"
+                                        value={formData.weightTrainingExperience}
+                                        onChange={handleChange}
+                                        required
+                                        className="py-3 px-4 block w-full shadow-sm rounded-md bg-input border-border focus:ring-primary focus:border-primary"
+                                    >
+                                        <option value="" disabled>Select your experience level...</option>
+                                        <option value="None">None</option>
+                                        <option value="Beginner (0-1 years)">Beginner (0-1 years)</option>
+                                        <option value="Intermediate (1-3 years)">Intermediate (1-3 years)</option>
+                                        <option value="Advanced (3+ years)">Advanced (3+ years)</option>
+                                    </select>
+                                </div>
+
                                 {/* Primary Goals */}
                                 <div>
-                                    <label htmlFor="goals" className="block text-sm font-medium text-foreground mb-2">What is your primary goal with personal training?</label>
+                                    <label htmlFor="goals" className="block text-sm font-medium text-foreground mb-2">What is your Fitness and performace goal with personal training?</label>
                                     <textarea
                                         id="goals"
                                         name="goals"
