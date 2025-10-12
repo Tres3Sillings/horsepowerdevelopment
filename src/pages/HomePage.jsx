@@ -50,7 +50,7 @@ export default function HomePage() {
                             </div>
                         </ScrollFadeIn>
                         <ScrollFadeIn immediate className="w-full h-96">
-                            <img src="/mtb-training-rock-trail.JPG" alt="Mountain biker on a rock trail" className="object-cover w-full h-full rounded-lg shadow-lg" />
+                            <img src="/national-champ-og.jpeg" alt="Mountain biker on a rock trail" className="object-cover w-full h-full rounded-lg shadow-lg" />
                         </ScrollFadeIn>
                     </div>
                     {/* Mobile Hero */}
@@ -86,16 +86,16 @@ export default function HomePage() {
                     {/* Desktop About */}
                     <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
                         <div className="grid grid-cols-1 gap-4">
-                            <img src="/about-me.jpg" alt="About me image 1" className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                            <img src="/about-me-3.JPG" alt="About me image 1" className="w-full h-auto object-cover rounded-lg shadow-lg" />
                             <div className="grid grid-cols-2 gap-4">
-                                <img src="/about-me-2.jpg" alt="About me image 2" className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                                <img src="/about-me-3.JPG" alt="About me image 3" className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                                <img src="/mtb-training-rock-trail.JPG" alt="About me image 2" className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                                <img src="/about-me.jpg" alt="About me image 3" className="w-full h-auto object-cover rounded-lg shadow-lg" />
                             </div>
                         </div>
                         <ScrollFadeIn className="text-center md:text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">About Me — James Povolny</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">What is Horsepower</h2>
                             <p className="mt-4 text-lg font-serif text-muted-foreground">
-                                I started Horsepower Development to give people the guidance I wish I had when I was a kid, wondering how to reach my goals of becoming a professional motocross racer. I’ve been racing dirt bikes since I was 8 years old, but when I graduated high school, I was far from where I needed to be to make my dreams come true. Desperate to know exactly what I was missing, I decided to put my racing boots aside to study exercise science at Liberty University. My studies answered every question I’ve ever had as an athlete, AND MORE. Along with my degree at Liberty, I was certified as a strength and conditioning specialist and raced on the cycling team at the collegiate level. This experience took my knowledge for training myself and others to levels I never imagined. After graduating, I’ve committed to chasing my dreams of becoming a professional athlete as well as helping others reach their fitness goals.
+                                My name is James Povolny and I started Horsepower Development to give people the guidance I wish I had when I was a kid, wondering how to reach my goals of becoming a professional motocross racer. I’ve been racing dirt bikes since I was 8 years old, but when I graduated high school, I was far from where I needed to be to make my dreams come true. Desperate to know exactly what I was missing, I decided to put my racing boots aside to study exercise science at Liberty University. My studies answered every question I’ve ever had as an athlete, AND MORE. Along with my degree at Liberty, I was certified as a strength and conditioning specialist and raced on the cycling team at the collegiate level. This experience took my knowledge for training myself and others to levels I never imagined. After graduating, I’ve committed to chasing my dreams of becoming a professional athlete as well as helping others reach their fitness goals.
                             </p>
                             <div className="mt-6 flex flex-col items-center md:items-start gap-2">
                                 <a href="https://www.instagram.com/horsepowerdevelopment/" target="_blank" rel="noopener noreferrer" className="flex items-center text-lg font-serif text-muted-foreground hover:text-primary transition-colors">
