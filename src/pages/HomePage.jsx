@@ -41,10 +41,10 @@ export default function HomePage() {
                                 Personalized training plans to teach you all the secrets of pro athletes and leave nothing on the table.
                             </p>
                             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                                <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
-                                    Start Training
+                                <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                    Start Training For Free
                                 </Link>
-                                <Link to="/#services" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
                                     See Programs
                                 </Link>
                             </div>
@@ -66,10 +66,10 @@ export default function HomePage() {
                                 Personalized training plans to teach you all the secrets of pro athletes and leave nothing on the table.
                             </p>
                             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                                <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
-                                    Start Training
+                                <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                    Start Training For Free
                                 </Link>
-                                <Link to="/#services" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                                <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
                                     See Programs
                                 </Link>
                             </div>
@@ -181,9 +181,9 @@ export default function HomePage() {
                         ))}
                     </motion.div>
                      <div className="mt-16 text-center">
-                        <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                            Book a Consultation
-                        </Link>
+                         <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                             See Programs
+                         </Link>
                     </div>
                 </div>
             </section>
@@ -212,8 +212,8 @@ export default function HomePage() {
                                 Take the next step and see how our solutions can help you achieve your goals.
                             </p>
                             <div className="mt-8">
-                                <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                                    Book a Session
+                                <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                    Start Training For Free
                                 </Link>
                             </div>
                         </div>

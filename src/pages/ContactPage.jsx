@@ -58,7 +58,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                                                Book a Call
+                                                Send Message
                                             </button>
                                         </div>
                                     </div>
@@ -72,12 +72,10 @@ export default function ContactPage() {
                                 <h2 className="text-2xl font-bold font-sans text-primary">Contact Information</h2>
                                 <div className="space-y-4 font-serif">
                                     <div className="flex items-center gap-4">
-                                        <Phone className="w-6 h-6 text-primary" />
-                                        <a href="tel:612-900-7447" className="text-lg text-muted-foreground hover:text-primary">(612) 900-7447</a>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <Mail className="w-6 h-6 text-primary" />
-                                        <a href="mailto:info@horsepowerdevelopment.com" className="text-lg text-muted-foreground hover:text-primary">info@horsepowerdevelopment.com</a>
+                                        <a href="mailto:james@horsepowerdevelopment.com" className="text-lg text-muted-foreground hover:text-primary">james@horsepowerdevelopment.com</a>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <MapPin className="w-6 h-6 text-primary" />

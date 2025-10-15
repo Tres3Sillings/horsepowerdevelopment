@@ -26,7 +26,7 @@ const Calendly = () => {
 
 
 // --- Main Contact Page Component ---
-export default function FormPage() {
+export default function IntroCallPage() {
     const location = useLocation();
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [formStatus, setFormStatus] = useState({ loading: false, error: '' });

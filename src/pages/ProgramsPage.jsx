@@ -75,10 +75,21 @@ export default function ProgramsPage() {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <div className="mt-8">
-                                            <Link to="/contact" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                                                Start Your Program
-                                            </Link>
+                                        <div className="mt-8 flex flex-wrap gap-4">
+                                            {program.title === 'Online Coaching' ? (
+                                                <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                                    Free intro call
+                                                </Link>
+                                            ) : (
+                                                <>
+                                                    <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                                        Free intro call
+                                                    </Link>
+                                                    <Link to="/schedule-session" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
+                                                        Schedule a session
+                                                    </Link>
+                                                </>
+                                            )}
                                         </div>
                                     </div>
                                     <div className={index % 2 === 0 ? 'md:order-2' : ''}>

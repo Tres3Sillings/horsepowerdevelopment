@@ -13,6 +13,7 @@ export default function Navbar() {
         //{ path: '/results', label: 'Results' },
        // { path: '/blog', label: 'Blog' },
         //{ path: '/pricing', label: 'Pricing' },
+        { path: '/contact', label: 'Contact' },
     ];
 
     const NavLink = ({ to, children }) => {

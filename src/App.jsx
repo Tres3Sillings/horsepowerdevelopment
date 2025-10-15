@@ -8,8 +8,9 @@ import ProgramsPage from './pages/ProgramsPage';
 import ResultsPage from './pages/ResultsPage';
 import BlogPage from './pages/BlogPage';
 import PricingPage from './pages/PricePage';
-import ContactPage from './pages/ContactPage';
-import FormPage from "./pages/FormPage.jsx";
+import ContactPage from './pages/ContactPage.jsx';
+import IntroCallPage from "./pages/IntroCallPage.jsx";
+import ScheduleSessionPage from "./pages/ScheduleSessionPage.jsx";
 
 // UI
 import Navbar from './components/Navbar';
@@ -39,10 +40,12 @@ function AppRoutes() {
                 <Route element={<SiteLayout />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/programs" element={<ProgramsPage />} />
+                    <Route path="/pricing" element={<PricingPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
                     <Route path="/results" element={<ResultsPage />} />
                     <Route path="/blog" element={<BlogPage />} />
-                    <Route path="/pricing" element={<PricingPage />} />
-                    <Route path="/contact" element={<FormPage />} />
+                    <Route path="/intro-call" element={<IntroCallPage />} />
+                    <Route path="/schedule-session" element={<ScheduleSessionPage />} />
                 </Route>
             </Routes>
         </AnimatePresence>
