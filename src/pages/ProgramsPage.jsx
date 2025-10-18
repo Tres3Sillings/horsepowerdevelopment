@@ -10,31 +10,40 @@ export default function ProgramsPage() {
             description: "Sport-specific strength, conditioning, and endurance to help you reach the highest level of competition.",
             details: [
                 "Personalized assessment and goal setting",
-                "On-bike and off-bike training drills",
-                "Technique analysis and feedback",
-                "Race strategy and mental preparation"
+                "Sport-specific drills and exercises",
+                "Performance analysis and feedback",
+                "Competitive strategy and annual planning",
+                "Sponsor discounts"
             ]
         },
         {
             title: "General strength and conditioning",
             description: "Holistic performance training tailored to your goals.",
             details: [
-                "Full-body functional strength workouts",
-                "Customized cardio and endurance plans",
-                "Mobility and flexibility routines",
-                "Nutritional guidance for peak performance"
+                "Full-body functional strength and conditioning",
+                "Personalized assessment and goal setting",
+                "Mobility and endurance building",
+                "Nutrition planning and recommendations",
+                "Sponsor Discounts"
             ]
         },
         {
             title: "Online Coaching",
             description: "Remote programs and personalized guidance, meeting you right where you’re at.",
             details: [
-                "Customized weekly training schedule",
+                "Personalized weekly training plan",
                 "Video analysis and feedback",
-                "Regular check-ins and progress tracking",
-                "Direct communication with your coach"
+                "Weekly check-ins and progress tracking",
+                "Direct communication with a coach",
+                "Sponsor Discounts"
             ]
         }
+    ];
+
+    const images = [
+        "/Programs1.png",
+        "/Programs2.png",
+        "/Programs3.png"
     ];
 
     return (
@@ -64,9 +73,16 @@ export default function ProgramsPage() {
                         {programs.map((program, index) => (
                             <ScrollFadeIn key={index}>
                                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                                    <div className={index % 2 === 0 ? '' : 'md:order-2'}>
-                                        <h2 className="text-3xl font-bold font-sans text-primary">{program.title}</h2>
-                                        <p className="mt-4 text-lg font-serif text-muted-foreground">{program.description}</p>
+                                    {/* Text Content */}
+                                    <div className={index % 2 === 0 ? 'md:order-1' : 'md:order-2'}>
+                                        <h2 className="text-3xl font-bold font-sans text-primary text-center md:text-left">{program.title}</h2>
+                                        
+                                        {/* Image for Mobile */}
+                                        <div className="md:hidden my-6">
+                                            <img src={images[index]} alt={program.title} className="object-cover w-full h-full rounded-lg shadow-lg" />
+                                        </div>
+
+                                        <p className="mt-4 text-lg font-serif text-muted-foreground text-center md:text-left">{program.description}</p>
                                         <ul className="mt-6 space-y-2 font-serif text-muted-foreground">
                                             {program.details.map((detail, i) => (
                                                 <li key={i} className="flex items-center gap-3">
@@ -75,7 +91,7 @@ export default function ProgramsPage() {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <div className="mt-8 flex flex-wrap gap-4">
+                                        <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
                                             {program.title === 'Online Coaching' ? (
                                                 <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
                                                     Free intro call
@@ -92,11 +108,9 @@ export default function ProgramsPage() {
                                             )}
                                         </div>
                                     </div>
-                                    <div className={index % 2 === 0 ? 'md:order-2' : ''}>
-                                        {/* Placeholder for an image */}
-                                        <div className="bg-muted rounded-lg shadow-lg w-full h-80 flex items-center justify-center">
-                                            <p className="text-muted-foreground">Image coming soon</p>
-                                        </div>
+                                    {/* Image for Desktop */}
+                                    <div className={`hidden md:block ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                                        <img src={images[index]} alt={program.title} className="object-cover w-full h-full rounded-lg shadow-lg" />
                                     </div>
                                 </div>
                             </ScrollFadeIn>
