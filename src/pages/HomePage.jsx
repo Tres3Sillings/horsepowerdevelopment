@@ -35,7 +35,7 @@ export default function HomePage() {
                     <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
                         <ScrollFadeIn immediate className="text-center md:text-left">
                             <h1 className="text-4xl md:text-6xl font-bold font-sans tracking-tight text-foreground">
-                                Unlock <span className="text-primary">Peak Performance</span>
+                                Unlock Your <span className="text-primary">Peak Performance</span>
                             </h1>
                             <p className="mt-6 max-w-xl mx-auto md:mx-0 text-lg md:text-xl font-serif text-muted-foreground">
                                 Personalized training plans to teach you all the secrets of pro athletes and leave nothing on the table.
@@ -56,7 +56,7 @@ export default function HomePage() {
                     {/* Mobile Hero */}
                     <div className="md:hidden text-center">
                         <h1 className="text-4xl font-bold font-sans tracking-tight text-foreground">
-                            Unlock <span className="text-primary">Peak Performance</span>
+                            Unlock Your <br /> <span className="text-primary">Peak Performance</span>
                         </h1>
                         <div className="mt-8 w-full h-96">
                              <img src="/national-champ-og.jpeg" alt="National Champion Athlete" className="object-cover w-full h-full rounded-lg shadow-lg" />

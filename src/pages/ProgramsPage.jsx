@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ScrollFadeIn from '../components/ScrollFadeIn';
+import { Bike, Dumbbell, ClipboardList } from 'lucide-react';
 
 export default function ProgramsPage() {
     const programs = [
         {
+            icon: <Bike className="w-16 h-16 text-secondary mx-auto lg:w-24 lg:h-24" />,
             title: "Training for Sports",
             description: "Sport-specific strength, conditioning, and endurance to help you reach the highest level of competition.",
             details: [
@@ -17,6 +19,7 @@ export default function ProgramsPage() {
             ]
         },
         {
+            icon: <Dumbbell className="w-16 h-16 text-secondary mx-auto lg:w-24 lg:h-24" />,
             title: "General strength and conditioning",
             description: "Holistic performance training tailored to your goals.",
             details: [
@@ -28,6 +31,7 @@ export default function ProgramsPage() {
             ]
         },
         {
+            icon: <ClipboardList className="w-16 h-16 text-secondary mx-auto lg:w-24 lg:h-24" />,
             title: "Online Coaching",
             description: "Remote programs and personalized guidance, meeting you right where you’re at.",
             details: [
@@ -38,12 +42,6 @@ export default function ProgramsPage() {
                 "Sponsor Discounts"
             ]
         }
-    ];
-
-    const images = [
-        "/Programs1.png",
-        "/Programs2.png",
-        "/Programs3.png"
     ];
 
     return (
@@ -77,9 +75,9 @@ export default function ProgramsPage() {
                                     <div className={index % 2 === 0 ? 'md:order-1' : 'md:order-2'}>
                                         <h2 className="text-3xl font-bold font-sans text-primary text-center md:text-left">{program.title}</h2>
                                         
-                                        {/* Image for Mobile */}
-                                        <div className="md:hidden my-6">
-                                            <img src={images[index]} alt={program.title} className="object-cover w-full h-full rounded-lg shadow-lg" />
+                                        {/* Icon for Mobile */}
+                                        <div className="md:hidden my-6 text-center">
+                                            {program.icon}
                                         </div>
 
                                         <p className="mt-4 text-lg font-serif text-muted-foreground text-center md:text-left">{program.description}</p>
@@ -108,9 +106,9 @@ export default function ProgramsPage() {
                                             )}
                                         </div>
                                     </div>
-                                    {/* Image for Desktop */}
-                                    <div className={`hidden md:block ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
-                                        <img src={images[index]} alt={program.title} className="object-cover w-full h-full rounded-lg shadow-lg" />
+                                    {/* Icon for Desktop */}
+                                    <div className={`hidden md:flex justify-center items-center ${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                                        {program.icon}
                                     </div>
                                 </div>
                             </ScrollFadeIn>
