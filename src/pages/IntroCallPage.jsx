@@ -32,6 +32,9 @@ export default function IntroCallPage() {
     const [formStatus, setFormStatus] = useState({ loading: false, error: '' });
 
     const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phoneNumber: '',
         age: '',
         discipline: '',
         otherDiscipline: '',
@@ -113,6 +116,51 @@ export default function IntroCallPage() {
 
                             <form onSubmit={handleSubmit} className="mt-12 bg-card border border-border p-8 rounded-xl shadow-lg space-y-6">
                                 <input type="hidden" name="selectedPackage" value={formData.selectedPackage} />
+
+                                {/* Name */}
+                                <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        className="py-3 px-4 block w-full shadow-sm rounded-md bg-input border-border focus:ring-primary focus:border-primary"
+                                        placeholder="e.g., John Doe"
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <div>
+                                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="py-3 px-4 block w-full shadow-sm rounded-md bg-input border-border focus:ring-primary focus:border-primary"
+                                        placeholder="e.g., you@example.com"
+                                    />
+                                </div>
+
+                                {/* Phone Number */}
+                                <div>
+                                    <label htmlFor="phoneNumber" className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        value={formData.phoneNumber}
+                                        onChange={handleChange}
+                                        required
+                                        className="py-3 px-4 block w-full shadow-sm rounded-md bg-input border-border focus:ring-primary focus:border-primary"
+                                        placeholder="e.g., (123) 456-7890"
+                                    />
+                                </div>
 
                                 {/* Age */}
                                 <div>
