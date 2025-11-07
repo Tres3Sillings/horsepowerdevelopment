@@ -11,6 +11,7 @@ import PricingPage from './pages/PricePage';
 import ContactPage from './pages/ContactPage.jsx';
 import IntroCallPage from "./pages/IntroCallPage.jsx";
 import ScheduleSessionPage from "./pages/ScheduleSessionPage.jsx";
+import ThankYouPage from "./pages/ThankYouPage.jsx";
 
 // UI
 import Navbar from './components/Navbar';
@@ -46,6 +47,7 @@ function AppRoutes() {
                     <Route path="/blog" element={<BlogPage />} />
                     <Route path="/intro-call" element={<IntroCallPage />} />
                     <Route path="/schedule-session" element={<ScheduleSessionPage />} />
+                    <Route path="/thank-you" element={<ThankYouPage />} />
                 </Route>
             </Routes>
         </AnimatePresence>
