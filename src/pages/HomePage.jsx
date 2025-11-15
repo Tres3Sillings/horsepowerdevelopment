@@ -42,7 +42,7 @@ export default function HomePage() {
                             </p>
                             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
-                                    Start Training For Free
+                                    Get Started For Free
                                 </Link>
                                 <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
                                     See Programs
@@ -79,6 +79,69 @@ export default function HomePage() {
             </section>
 
             <MountainDivider />
+
+            {/* 3. Services Section */}
+            <section id="services" className="bg-background py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                     {/* Desktop Services */}
+                    <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
+                        <ScrollFadeIn className="text-center md:text-left">
+                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Programs</h2>
+                            <p className="mt-4 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
+                        </ScrollFadeIn>
+                        <ScrollFadeIn>
+                            <img
+                                src="/youth-mountain-bike-team.jpg"
+                                alt="A group of seven young mountain bikers in matching red and black jerseys and helmets stand in a line with their bikes, posing for a photo outdoors. They are on a dirt and grass area with trees in the background."
+                                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                            />
+                        </ScrollFadeIn>
+                    </div>
+                    {/* Mobile Services */}
+                    <div className="md:hidden text-center">
+                        <h2 className="text-3xl font-bold font-sans text-primary">Programs</h2>
+                        <div className="mt-8">
+                            <img
+                                src="/youth-mountain-bike-team.jpg"
+                                alt="A group of seven young mountain bikers in matching red and black jerseys and helmets stand in a line with their bikes, posing for a photo outdoors. They are on a dirt and grass area with trees in the background."
+                                className="w-full h-auto object-cover rounded-lg shadow-lg"
+                            />
+                        </div>
+                        <p className="mt-8 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
+                    </div>
+
+                    <motion.div
+                        className="mt-16 grid md:grid-cols-3 gap-8"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {features.map((feature, i) => (
+                            <AnimatedFeatureCard key={i} feature={feature} />
+                        ))}
+                    </motion.div>
+                     <div className="mt-16 text-center">
+                         <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
+                             See Programs
+                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Results / Testimonials Section */}
+            <section className="bg-muted py-16 md:py-24">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                     <ScrollFadeIn className="text-center max-w-3xl mx-auto">
+                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Horsepower Athletes</h2>
+                     </ScrollFadeIn>
+                     <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <img src="/testimonial-image-1.jpg" alt="Two young male cyclists in matching red and black Hammerdown HP jerseys and full gear, standing with their mountain bikes on a grassy field." className="w-full h-full object-cover rounded-lg shadow-lg" />
+                        <img src="/testimonial-image-2.jpg" alt="Two male cyclists in matching white and red Liberty team jerseys, holding red Hammerdown HP water bottles and standing in front of a bus." className="w-full h-full object-cover rounded-lg shadow-lg" />
+                        <img src="/testimonial-image-3.jpg" alt="A group of five young cyclists posing under a red Fueling Station tent at a grassy, outdoor bike event." className="col-span-2 md:col-span-1 w-full h-full object-cover rounded-lg shadow-lg" />
+                     </div>
+                </div>
+            </section>
 
             {/* 2. About Section */}
             <section className="bg-muted py-16 md:py-24">
@@ -138,70 +201,6 @@ export default function HomePage() {
                 </div>
             </section>
 
-
-            {/* 3. Services Section */}
-            <section id="services" className="bg-background py-16 md:py-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                     {/* Desktop Services */}
-                    <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
-                        <ScrollFadeIn className="text-center md:text-left">
-                            <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Programs</h2>
-                            <p className="mt-4 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
-                        </ScrollFadeIn>
-                        <ScrollFadeIn>
-                            <img
-                                src="/youth-mountain-bike-team.jpg"
-                                alt="A group of seven young mountain bikers in matching red and black jerseys and helmets stand in a line with their bikes, posing for a photo outdoors. They are on a dirt and grass area with trees in the background."
-                                className="w-full h-auto object-cover rounded-lg shadow-lg"
-                            />
-                        </ScrollFadeIn>
-                    </div>
-                    {/* Mobile Services */}
-                    <div className="md:hidden text-center">
-                        <h2 className="text-3xl font-bold font-sans text-primary">Programs</h2>
-                        <div className="mt-8">
-                            <img
-                                src="/youth-mountain-bike-team.jpg"
-                                alt="A group of seven young mountain bikers in matching red and black jerseys and helmets stand in a line with their bikes, posing for a photo outdoors. They are on a dirt and grass area with trees in the background."
-                                className="w-full h-auto object-cover rounded-lg shadow-lg"
-                            />
-                        </div>
-                        <p className="mt-8 text-lg font-serif text-muted-foreground">We offer a range of services to help you achieve your fitness goals. Whether you are a professional athlete or a weekend warrior, we have a program for you.</p>
-                    </div>
-
-                    <motion.div
-                        className="mt-16 grid md:grid-cols-3 gap-8"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        {features.map((feature, i) => (
-                            <AnimatedFeatureCard key={i} feature={feature} />
-                        ))}
-                    </motion.div>
-                     <div className="mt-16 text-center">
-                         <Link to="/programs" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105 text-center">
-                             See Programs
-                         </Link>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Results / Testimonials Section */}
-            <section className="bg-muted py-16 md:py-24">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                     <ScrollFadeIn className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold font-sans text-primary">Horsepower Athletes</h2>
-                     </ScrollFadeIn>
-                     <div className="mt-12 grid md:grid-cols-3 gap-4">
-                        <img src="/testimonial-image-1.jpg" alt="Two young male cyclists in matching red and black Hammerdown HP jerseys and full gear, standing with their mountain bikes on a grassy field." className="object-cover w-full h-full rounded-lg shadow-lg" />
-                        <img src="/testimonial-image-2.jpg" alt="Two male cyclists in matching white and red Liberty team jerseys, holding red Hammerdown HP water bottles and standing in front of a bus." className="object-cover w-full h-full rounded-lg shadow-lg" />
-                        <img src="/testimonial-image-3.jpg" alt="A group of five young cyclists posing under a red Fueling Station tent at a grassy, outdoor bike event." className="object-cover w-full h-full rounded-lg shadow-lg" />
-                     </div>
-                </div>
-            </section>
-
             {/* 5. Contact Section */}
             <section className="bg-background py-16 md:py-24">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,7 +212,7 @@ export default function HomePage() {
                             </p>
                             <div className="mt-8">
                                 <Link to="/intro-call" className="bg-primary text-primary-foreground hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-ring font-bold rounded-md px-8 py-4 text-lg transition-all duration-300 transform hover:scale-105">
-                                    Start Training For Free
+                                    Get Started For Free
                                 </Link>
                             </div>
                         </div>
